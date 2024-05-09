@@ -1,0 +1,117 @@
+body {
+    background-color: #dddddd;
+  }
+  
+
+
+  .span {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1816px;
+    width: 95%;
+    margin: auto;
+  }
+
+  .watermark {
+    font-size: 33px;
+    font-family: extrabold;
+  }
+  .dot {
+    color: #0081ff;
+  }
+  .Resume {
+    color: #b3b3b3;
+    font-size: 13px;
+  }
+  .aboutme :nth-child(1) {
+    font-size: 158.3px;
+    font-family: extrabold;
+    position: relative;
+  }
+  .aboutme :nth-child(2) {
+    font-size: 43.17px;
+    color: #373737;
+    font-family: extrabold;
+    position: absolute;
+    text-align: center;
+    top: 8%;
+    right: 1%;
+  }
+  
+  /*slideris fontebi  */
+  
+  .icon {
+    max-width: 30px;
+    margin: 5px;
+  }
+  .description {
+    display: flex;
+    flex-direction: column;
+  }
+  .slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 100px;
+    max-width: 1815px;
+    width: 95%;
+    margin: auto;
+  }
+  .description :first-child {
+    font-size: 50px;
+    font-family: glaciaregular;
+    letter-spacing: 0.50px;
+    color: #212121;
+  }
+  .description :nth-child(2) {
+    font-size: 50px;
+    font-family: glaciabold;
+    letter-spacing: 1.06px;
+    color: #212121;
+  }
+  .description :nth-child(3) {
+    font-size: 23.29px;
+    font-family: glaciaregular;
+    color: #212121;
+  }
+  
+  .slide div img {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    transition: all 0.7s;
+  }
+  .slide.active div img {
+    width: auto;
+    height: auto;
+    opacity: 1;
+    padding: 20px;
+  }
+  .clients {
+    float: right;
+  }
+  .clients :first-child {
+    font-size: 24px;
+    font-family: montserratbold;
+    color: #e93656;
+  }
+  .clients :nth-child(2) {
+    font-size: 24px;
+    font-family: montserratbold;
+  }
+  
+  .clients :nth-child(3) {
+    width: 340px;
+    min-height: 6px;
+    background-color: #e93656;
+    margin-top: 24px;
+  }
