@@ -78,7 +78,7 @@ body {
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 19px;
     justify-content: center;
     margin-bottom: 100px;
     max-width: 1815px;
@@ -239,11 +239,139 @@ body {
     margin-top: 12px;
   }
   .social-links {
-    gap: 10px;
     margin-left: 25px;
     margin-top: 70px;
     display: flex;
+    gap: 10px;
 
+  }
+
+  .dottedoutline:hover {
+    background-color: #f33b5d;
+    border: none;
   }
   
  
+  .aboutusinfo {
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #131a36;
+    gap: 39px;
+    display: flex;
+
+  }
+  .dottedoutline {
+    max-width: 100px;
+    border: 1px dashed white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .contactinfo img {
+    padding: 30px;
+  }
+ 
+  .postmark {
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+  }
+  .postmark h3 {
+    font-size: 25px;
+    font-family: glaciabold;
+    color: #ffffff;
+    margin-bottom: 5px;
+  }
+  .postmark a {
+    color: #dfdfdf;
+    font-size: 14px;
+    font-family: muli;
+    letter-spacing: 0.42px;
+
+  }
+
+
+  
+  
+  .contactinfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 29px;
+    margin-top: 55px;
+    margin-bottom: 55px;
+  }
+
+
+
+  /* boxes */
+
+
+  .inside-content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1170px;
+    gap: 11px;
+  }
+
+  .boxes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 200px;
+    background-color: #ffff;
+
+  }
+  
+  .box {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 360px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 285px;
+    gap: 15px;
+    background-color: #fafafa;
+    border: 1px solid rgb(230, 220, 220);
+  }
+  .box img {
+    max-width: 50px;
+  }
+  .box h3 {
+    font-size: 20px;
+    font-family: glaciabold;
+    color: #222222;
+  }
+  .hover-b {
+    display: none;
+  }
+
+  .hover-b:hover {
+    display: block;
+  }
+  .box:hover {
+    border: none;
+    color: #ececec;
+    background-color: #15263e;
+    font-size: 14px;
+    font-family: muli;
+  }
+  .boxhover-none {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .boxhover-none:hover {
+    display: none;
+    min-width: 285px;
+    min-height: 360px;
+  }
+  
+ 
+  
