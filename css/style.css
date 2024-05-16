@@ -309,7 +309,7 @@ body {
   /* boxes */
 
 
-  .inside-content {
+  .block-content {
     display: flex;
     flex-wrap: wrap;
     max-width: 1170px;
@@ -418,5 +418,174 @@ body {
 }
 
 
+  /*latest projects */
 
 
+  .projects-hover {
+    display: none;
+  }
+  
+  .projects-hover-block {
+    display: none;
+  }
+
+  .Last-projects {
+    padding-top: 140px;
+    padding-bottom: 160px;
+    max-width: 1920px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Last-projects h2 {
+    text-align: center;
+    font-size: 35px;
+    padding: 20px;
+
+  }
+
+  
+
+  .undertakings-heading {
+    max-width: 645px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
+  .undertakings-external {
+    max-width: 1170.01px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .undertakings-controls {
+    max-width: 240px;
+    width: 100%;
+    margin: 5px;
+    min-height: 401px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #15263e;
+  }
+  .undertakings-controls button {
+    border: none;
+    background-color: #15263e;
+    font-family: "Glacia-Bold";
+    color: #ffffff;
+    font-size: large;
+    margin-top: 10px;
+  }
+  .undertakings-controls button:hover {
+    color: #e93656;
+  }
+  .undertakings-controls button::after {
+    height: 2px;
+    width: 100px;
+    background-color: #e93656;
+  }
+
+  .undertakings-all {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .undertaking-lines {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .task-article,
+  .design-post,
+  .demonstration-post {
+    max-width: 300px;
+    width: 100%;
+    min-height: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #555555;
+    font-family: "Mul";
+    color: #ffffff;
+  }
+  .job-concepts,
+  .mockup-design,
+  .psd-creation,
+  .brand-symbol,
+  .presentation-slide,
+  .symbols p {
+    max-width: 194px;
+  }
+  .prototype-post,
+  .brand-post,
+  .symbol-post {
+    max-width: 300px;
+    width: 100%;
+    min-height: 350px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #848484;
+    font-family: "Mul";
+    color: #ffffff;
+  }
+  .filter-option.actual {
+    color: #e93656;
+  }
+  
+  .projects-hover-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .projects-hover-block img {
+    padding: 20px;
+    border: 2px solid #e93656;
+    border-radius: 40px;
+  }
+  .projects-hover-block p {
+    padding-top: 17px;
+    padding-bottom: 7px;
+    font-size: small;
+    font-family: "Mul";
+    max-width: 90px;
+
+  }
+
+  .projects-hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    display: none;
+  }
+
+  .undertaking-lines article:hover {
+    background-color: #000000;
+  }
+
+  .undertaking-lines article:hover article {
+    display: block;
+    background-color: #000000;
+  }
+  
+  .projects-hover-block h3 {
+    font-family: "Glacia-Bold";
+  }
+  .undertaking-lines article:hover div {
+    display: none;
+  }
+  
+  
+  

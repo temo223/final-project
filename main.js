@@ -141,33 +141,68 @@ document.querySelector('.recomendation').addEventListener('mouseleave', () => {
 });
 
 
-// projects
 
-function filterproects(e) {
-  const proeects = document.querySelectorAll(".proect-lines div");
 
-  let filter = e.target.dataset.filter;
-  proeects.forEach((proect) => {
-    proect.classList.contains(filter)
-      ? proect.classList.remove("hidden")
-      : proect.classList.add("hidden");
+/* Latesst Projects*/
 
-    if (filter === "*") {
-      proeects.forEach((proect) => proect.classList.remove("hidden"));
+function filterProjects(category) {
+  const articles = document.querySelectorAll('.undertaking-lines article');
+
+  articles.forEach(article => {
+    if (category === "*" || article.dataset.category === category) {
+      article.style.display = 'flex'; 
+    } else {
+      article.style.display = 'none'; 
     }
   });
+
+  const projectBlocks = document.querySelectorAll('.projects-hover-block');
+  projectBlocks.forEach(block => {
+    block.style.display = 'none';
+  });
 }
-function filterproects(e) {
-  const proeects = document.querySelectorAll(".proect-lines div");
-  let filter = e.target.dataset.filter;
-  if (filter === "*") {
-    proeects.forEach((proect) => proect.classList.remove("hidden"));
+
+const projectArticles = document.querySelectorAll('.undertaking-lines article');
+projectArticles.forEach(article => {
+  article.addEventListener('mouseover', function() {
+    const projectsHoverBlock = article.querySelector('.projects-hover-block');
+    projectsHoverBlock.style.display = 'block';
+  });
+  article.addEventListener('mouseout', function() {
+    const projectsHoverBlock = article.querySelector('.projects-hover-block');
+    projectsHoverBlock.style.display = 'none';
+  });
+});
+
+const filterButtons = document.querySelectorAll('.filter-option');
+filterButtons.forEach(button => {
+  button.addEventListener('click', function(event) {
+    const category = event.target.dataset.filter; 
+    filterProjects(category); 
+  });
+});
+
+
+
+
+
+// 785px dabla articlebi lamazad ganlagdes categoriebis qvemot 
+
+function adjustLayout() {
+  const viewportWidth = window.innerWidth;
+  const undertakingsExternal = document.querySelector('.undertakings-external');
+  const undertakingsControls = document.querySelector('.undertakings-controls');
+
+  if (viewportWidth < 785) {
+    undertakingsExternal.style.flexDirection = 'column'; // dtack articles vertically
+    undertakingsControls.style.margin = '0 auto'; // cnter the controls horizontally
   } else {
-    proeects.forEach((proect) => {
-      proect.classList.contains(filter)
-        ? proect.classList.remove("hidden")
-        : proect.classList.add("hidden");
-    });
+    undertakingsExternal.style.flexDirection = 'row'; // display articles horizontally
+    undertakingsControls.style.margin = '0'; // deset margin
   }
 }
- 
+
+adjustLayout();
+
+window.addEventListener('resize', adjustLayout);
+
