@@ -1,4 +1,4 @@
-const slides = document.querySelectorAll(".slide");
+const slides = document.querySelectorAll (".slide");
 let currentSlide=0;
 function loadSlides(){
     slides.forEach((slide,index)=>{
@@ -192,17 +192,49 @@ function adjustLayout() {
   const viewportWidth = window.innerWidth;
   const undertakingsExternal = document.querySelector('.undertakings-external');
   const undertakingsControls = document.querySelector('.undertakings-controls');
+  const undertakingsAll = document.querySelector('.undertakings-all');
+  const latestArticles = document.querySelector('.latest-articles');
 
-  if (viewportWidth < 785) {
-    undertakingsExternal.style.flexDirection = 'column'; // dtack articles vertically
-    undertakingsControls.style.margin = '0 auto'; // cnter the controls horizontally
+  if (viewportWidth < 1181) {
+    undertakingsExternal.style.flexDirection = 'column';
+    undertakingsControls.style.margin = '0 auto';
+    undertakingsAll.style.justifyContent = 'center';
+    latestArticles.style.order = '1';
   } else {
-    undertakingsExternal.style.flexDirection = 'row'; // display articles horizontally
-    undertakingsControls.style.margin = '0'; // deset margin
+    undertakingsExternal.style.flexDirection = 'row';
+    undertakingsControls.style.margin = '0';
+    undertakingsAll.style.justifyContent = 'flex-start';
+    latestArticles.style.order = '0';
   }
 }
 
 adjustLayout();
 
 window.addEventListener('resize', adjustLayout);
+
+
+// mobiluris versiaze  latest articlebis suratebis gaqroba 
+
+
+window.addEventListener('DOMContentLoaded', function() {
+  function toggleImageVisibility() {
+    var viewportWidth = window.innerWidth;
+    var images = document.querySelectorAll('.art-pic');
+
+    if (viewportWidth < 768) {
+      images.forEach(function(image) {
+        image.classList.add('hide-image');
+      });
+    } else {
+      images.forEach(function(image) {
+        image.classList.remove('hide-image');
+      });
+    }
+  }
+
+  toggleImageVisibility();
+
+  window.addEventListener('resize', toggleImageVisibility);
+});
+
 
