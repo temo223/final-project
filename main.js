@@ -238,3 +238,114 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 
+
+// contact-us subbmision form 
+
+
+const form = document.querySelector("#sigh-up");
+const nameInput = document.querySelector("#username");
+const emailInput = document.querySelector("#email");
+const websiteInput = document.querySelector("#site");
+const messageInput = document.querySelector("#messag");
+const nameError = document.querySelector("#username-error");
+const emailError = document.querySelector("#email-error");
+const webError = document.querySelector("#web-error");
+
+function validateForm() {
+    let isValid = true;
+
+    if (nameInput.value.trim() === '' || emailInput.value.trim() === '' || websiteInput.value.trim() === '' || messageInput.value.trim() === '') {
+        isValid = false;
+        alert("Please fill in all fields.");
+    }
+
+    if (nameInput.value.trim() === '') {
+        nameError.textContent = "Name is required.";
+        nameInput.classList.add("error");
+        isValid = false;
+    } else {
+        nameError.textContent = "";
+        nameInput.classList.remove("error");
+    }
+
+    if (emailInput.value.trim() === '') {
+        emailError.textContent = "Email is required.";
+        emailInput.classList.add("error");
+        isValid = false;
+    } else if (!emailInput.value.trim().includes('@')) {
+        emailError.textContent = "Please enter a valid email address.";
+        emailInput.classList.add("error");
+        isValid = false;
+    } else {
+        emailError.textContent = "";
+        emailInput.classList.remove("error");
+    }
+
+    if (websiteInput.value.trim() === '') {
+        webError.textContent = "Website is required.";
+        websiteInput.classList.add("error");
+        isValid = false;
+    } else {
+        webError.textContent = "";
+        websiteInput.classList.remove("error");
+    }
+
+    return isValid;
+}
+
+function sendMessage(user) {
+    fetch("https://borjomi.loremipsum.ge/api/send-message", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(user),
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 1) {
+            showModal("Thank you for getting in touch! We appreciate you contacting us.");
+            form.reset();
+        } else {
+            alert("Message could not be sent. Please try again later.");
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("An error occurred while sending the message. Please try again later.");
+    });
+}
+
+function showModal(message) {
+    console.log("Showing modal:", message); 
+    const modalElement = document.createElement("div");
+    modalElement.classList.add("modal");
+    modalElement.innerHTML = `
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p>${message}</p>
+        </div>
+    `;
+    document.body.appendChild(modalElement);
+
+    const closeButton = modalElement.querySelector(".close-button");
+    closeButton.addEventListener("click", () => {
+        modalElement.remove();
+    });
+}
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+        const user = {
+            name: nameInput.value,
+            email: emailInput.value,
+            website: websiteInput.value,
+            message: messageInput.value,
+        };
+
+        console.log("Form submitted!"); 
+        sendMessage(user);
+    }
+});
