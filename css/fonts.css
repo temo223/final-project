@@ -1,0 +1,46 @@
+
+  @font-face {
+    font-family: glaciaregular;
+    src: url(../assets/fonts/GlacialIndifference-Regular.ttf);
+  }
+  @font-face {
+    font-family: extrabold;
+    src: url(../assets/fonts/Poppins-ExtraBold.ttf);
+  }
+
+
+  @font-face {
+    font-family: muli;
+    src: url(../assets/fonts/Muli-Light.ttf);
+  }
+  @font-face {
+    font-family: muliregular;
+    src: url(../assets/fonts/Muli-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: glaciabold;
+    src: url(../assets/fonts/GlacialIndifference-Bold.ttf);
+  }
+  @font-face {
+    font-family: montserratbold;
+    src: url(../assets/fonts/Montserrat-Bold.ttf);
+  }
+  
+  @font-face {
+    font-family: roboto;
+    src: url(../assets/fonts/Roboto-Light.ttf);
+  }
+  @font-face {
+    font-family: jaapokki;
+    src: url(../assets/fonts/Jaapokki-Regular.eot);
+  }
+  @font-face {
+    font-family: poppins;
+    src: url(../assets/fonts/Poppins-SemiBold.ttf);
+  }
+  @font-face {
+    font-family: popbold;
+    src: url(../assets/fonts/Poppins-ExtraBold.ttf);
+  }
+  
